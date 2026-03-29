@@ -119,7 +119,7 @@ export default function App() {
 
           <div className="hidden md:block">
             <a
-              href="mailto:contact@production-cew.com?subject=Production%20CEW%20Inquiry"
+              href="mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry"
               className="text-sm font-semibold hover:text-white/80 transition-colors"
             >
               Contact Us
@@ -155,7 +155,7 @@ export default function App() {
               </a>
             ))}
             <a
-              href="mailto:contact@production-cew.com?subject=Production%20CEW%20Inquiry"
+              href="mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry"
               className="btn-primary mt-4"
             >
               Contact Us
@@ -197,7 +197,7 @@ export default function App() {
             </h1>
             <p className="mx-auto max-w-xl text-lg text-brand-secondary md:text-xl font-light leading-relaxed mb-12">
               우리는 인간 존재의 고요한 긴장과 선택의 순간을 기록합니다. <br />
-              Production CEW is a film production founded by three young filmmakers.
+              Production CEW is a Seoul-based film production founded by three young filmmakers.
             </p>
             <button className="btn-primary">
               View Our Works
@@ -236,7 +236,7 @@ export default function App() {
                 </p>
                 <div className="flex gap-4">
                   <button className="btn-primary">View Works</button>
-                  <a href="mailto:contact@production-cew.com?subject=Production%20CEW%20Inquiry" className="btn-secondary inline-flex items-center justify-center">Contact Us</a>
+                  <a href="mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry" className="btn-secondary inline-flex items-center justify-center">Contact Us</a>
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -454,10 +454,10 @@ export default function App() {
                   For collaboration, screenings, or festival inquiries.
                 </h2>
                 <div className="space-y-6">
-                  <a href="mailto:contact@production-cew.com" className="flex items-center justify-between p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group">
+                  <a href="mailto:j-yeonchan@production-cew.com" className="flex items-center justify-between p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group">
                     <div className="flex items-center gap-4">
                       <Mail className="w-5 h-5 text-white/40" />
-                      <span>contact@production-cew.com</span>
+                      <span>j-yeonchan@production-cew.com</span>
                     </div>
                     <ArrowRight className="w-5 h-5 text-white/20 group-hover:translate-x-1 transition-transform" />
                   </a>
