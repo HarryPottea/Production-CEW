@@ -377,11 +377,11 @@ export default function App() {
                       }`}
                     >
                       <button type="button" onClick={() => setActiveWork(idx)} className="block w-full text-left">
-                        <div className="aspect-[7/10] overflow-hidden bg-black/30 max-h-[420px]">
+                        <div className="aspect-[7/10] overflow-hidden bg-black/30 max-h-[420px] flex items-center justify-center p-2">
                           <img
                             src={work.image}
                             alt={work.title}
-                            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                            className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]"
                           />
                         </div>
                         <div className="p-3.5 md:p-4">
