@@ -41,6 +41,11 @@ const works = [
       "고요한 불안과 관계의 균열 속에서 인간의 선택과 존재를 응시하는 20분의 단편 영화.",
     production: "프로덕션 큐",
     distribution: "주식회사 퍼니콘",
+    ott: [
+      { label: "Wavve", href: "https://www.wavve.com/player/movie?movieid=MV_C901_SG0000205556&autoplay=y" },
+      { label: "TVING", href: "https://www.tving.com/contents/M000379698?utm_source=Naver&utm_medium=Organic&utm_campaign=SERP" },
+      { label: "WATCHA", href: "https://watcha.com/contents/m5nXPgo" },
+    ],
   },
 ];
 
@@ -355,43 +360,59 @@ export default function App() {
 
             <div className="w-full">
               {works.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-6 max-w-6xl">
                   {works.map((work, idx) => (
-                    <motion.button
+                    <motion.div
                       key={idx}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      onClick={() => setActiveWork(idx)}
-                      className={`group text-left overflow-hidden rounded-[28px] border transition-all duration-500 ${
+                      className={`group text-left overflow-hidden rounded-[24px] border transition-all duration-500 ${
                         activeWork === idx
                           ? "bg-white/10 border-white/20"
                           : "bg-white/[0.02] border-white/5 hover:bg-white/5"
                       }`}
                     >
-                      <div className="aspect-[7/10] overflow-hidden bg-black/30">
-                        <img
-                          src={work.image}
-                          alt={work.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                        />
-                      </div>
-                      <div className="p-6">
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          <Badge className="bg-white/10 text-white border-white/20">{work.year}</Badge>
-                          <Badge className="bg-white/10 text-white border-white/20">{work.format}</Badge>
+                      <button type="button" onClick={() => setActiveWork(idx)} className="block w-full text-left">
+                        <div className="aspect-[7/10] overflow-hidden bg-black/30">
+                          <img
+                            src={work.image}
+                            alt={work.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                          />
                         </div>
-                        <h3 className="text-2xl font-bold mb-2">{work.title}</h3>
-                        <p className="text-sm text-white/50 mb-4">{work.titleKo}</p>
-                        <p className="text-sm text-brand-secondary leading-relaxed mb-5 line-clamp-3">
-                          {work.description}
-                        </p>
-                        <div className="flex flex-col gap-2 text-sm text-white/70">
-                          <div><span className="text-white/40">제작</span> {work.production}</div>
-                          <div><span className="text-white/40">배급</span> {work.distribution}</div>
+                        <div className="p-4 md:p-5">
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            <Badge className="bg-white/10 text-white border-white/20">{work.year}</Badge>
+                            <Badge className="bg-white/10 text-white border-white/20">{work.format}</Badge>
+                          </div>
+                          <h3 className="text-xl font-bold mb-1">{work.title}</h3>
+                          <p className="text-sm text-white/50 mb-3">{work.titleKo}</p>
+                          <p className="text-sm text-brand-secondary leading-relaxed mb-4 line-clamp-3">
+                            {work.description}
+                          </p>
+                          <div className="flex flex-col gap-1.5 text-sm text-white/70">
+                            <div><span className="text-white/40">제작</span> {work.production}</div>
+                            <div><span className="text-white/40">배급</span> {work.distribution}</div>
+                          </div>
+                        </div>
+                      </button>
+                      <div className="px-4 md:px-5 pb-4 md:pb-5">
+                        <div className="flex flex-wrap gap-2">
+                          {work.ott?.map((platform) => (
+                            <a
+                              key={platform.label}
+                              href={platform.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/75 hover:bg-white/10 transition-colors"
+                            >
+                              {platform.label}
+                            </a>
+                          ))}
                         </div>
                       </div>
-                    </motion.button>
+                    </motion.div>
                   ))}
                 </div>
               ) : (
