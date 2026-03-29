@@ -60,7 +60,7 @@ const works = [
     image: injiPoster,
     description:
       "상담을 받던 현태는 상담사에게 현태가 키우던 새를 현태 스스로 죽였다는 이상한 말을 듣는다.",
-    production: "프로덕션",
+    production: "프로덕션 큐",
   },
 ];
 
