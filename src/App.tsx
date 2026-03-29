@@ -18,6 +18,7 @@ import {
 import cewLogo from "@/assets/cew-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import whyAreYouHerePoster from "@/assets/why-are-you-here-poster.jpg";
+import injiPoster from "@/assets/inji-poster2.jpg";
 import wavveIcon from "@/assets/icon-wavve.jpg";
 import watchaIcon from "@/assets/icon-watcha.jpg";
 import tvingIcon from "@/assets/icon-tving.jpg";
@@ -49,6 +50,17 @@ const works = [
       { label: "TVING", href: "https://www.tving.com/contents/M000379698?utm_source=Naver&utm_medium=Organic&utm_campaign=SERP", icon: tvingIcon },
       { label: "WATCHA", href: "https://watcha.com/contents/m5nXPgo", icon: watchaIcon },
     ],
+  },
+  {
+    title: "인지장사 기언야선",
+    titleKo: "인지장사 기언야선",
+    year: "2022",
+    status: "Completed",
+    format: "Short Film · 22min",
+    image: injiPoster,
+    description:
+      "상담을 받던 현태는 상담사에게 현태가 키우던 새를 현태 스스로 죽였다는 이상한 말을 듣는다.",
+    production: "프로덕션",
   },
 ];
 
@@ -396,7 +408,9 @@ export default function App() {
                           </p>
                           <div className="flex flex-col gap-1 text-xs text-white/70">
                             <div><span className="text-white/40">제작</span> {work.production}</div>
-                            <div><span className="text-white/40">배급</span> {work.distribution}</div>
+                            {work.distribution ? (
+                              <div><span className="text-white/40">배급</span> {work.distribution}</div>
+                            ) : null}
                           </div>
                         </div>
                       </button>
