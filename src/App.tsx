@@ -165,7 +165,7 @@ export default function App() {
             <img 
               src={heroBg}
               alt="Production CEW hero background" 
-              className="w-full h-full object-cover opacity-35 brightness-50 scale-110 blur-[1px]"
+              className="w-full h-full object-cover opacity-55 brightness-90 scale-110 blur-[0.5px]"
             />
             
             {/* Atmospheric Blobs */}
