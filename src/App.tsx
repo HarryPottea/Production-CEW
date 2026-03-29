@@ -118,12 +118,15 @@ export default function App() {
           </nav>
 
           <div className="hidden md:block">
-            <a
-              href="mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry"
+            <button
+              type="button"
+              onClick={() => {
+                window.location.href = "mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry";
+              }}
               className="text-sm font-semibold hover:text-white/80 transition-colors"
             >
               Contact Us
-            </a>
+            </button>
           </div>
 
           <button
@@ -154,12 +157,15 @@ export default function App() {
                 {item.label}
               </a>
             ))}
-            <a
-              href="mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry"
+            <button
+              type="button"
+              onClick={() => {
+                window.location.href = "mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry";
+              }}
               className="btn-primary mt-4"
             >
               Contact Us
-            </a>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -236,7 +242,15 @@ export default function App() {
                 </p>
                 <div className="flex gap-4">
                   <a href="#works" className="btn-primary inline-flex items-center justify-center">View Works</a>
-                  <a href="mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry" className="btn-secondary inline-flex items-center justify-center">Contact Us</a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      window.location.href = "mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry";
+                    }}
+                    className="btn-secondary inline-flex items-center justify-center"
+                  >
+                    Contact Us
+                  </button>
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
