@@ -363,25 +363,25 @@ export default function App() {
 
             <div className="w-full">
               {works.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-5 max-w-5xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-5 max-w-4xl">
                   {works.map((work, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      className={`group text-left overflow-hidden rounded-[24px] border transition-all duration-500 ${
+                      className={`group text-left overflow-hidden rounded-[24px] border transition-all duration-500 max-w-[280px] ${
                         activeWork === idx
                           ? "bg-white/10 border-white/20"
                           : "bg-white/[0.02] border-white/5 hover:bg-white/5"
                       }`}
                     >
                       <button type="button" onClick={() => setActiveWork(idx)} className="block w-full text-left">
-                        <div className="aspect-[7/10] overflow-hidden bg-black/30 max-h-[420px] flex items-center justify-center p-2">
+                        <div className="aspect-[7/10] overflow-hidden bg-black/30 max-h-[400px]">
                           <img
                             src={work.image}
                             alt={work.title}
-                            className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+                            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                           />
                         </div>
                         <div className="p-3.5 md:p-4">
