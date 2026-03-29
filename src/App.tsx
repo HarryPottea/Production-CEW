@@ -18,6 +18,9 @@ import {
 import cewLogo from "@/assets/cew-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import whyAreYouHerePoster from "@/assets/why-are-you-here-poster.jpg";
+import wavveIcon from "@/assets/icon-wavve.jpg";
+import watchaIcon from "@/assets/icon-watcha.jpg";
+import tvingIcon from "@/assets/icon-tving.jpg";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -42,9 +45,9 @@ const works = [
     production: "프로덕션 큐",
     distribution: "주식회사 퍼니콘",
     ott: [
-      { label: "Wavve", href: "https://www.wavve.com/player/movie?movieid=MV_C901_SG0000205556&autoplay=y" },
-      { label: "TVING", href: "https://www.tving.com/contents/M000379698?utm_source=Naver&utm_medium=Organic&utm_campaign=SERP" },
-      { label: "WATCHA", href: "https://watcha.com/contents/m5nXPgo" },
+      { label: "Wavve", href: "https://www.wavve.com/player/movie?movieid=MV_C901_SG0000205556&autoplay=y", icon: wavveIcon },
+      { label: "TVING", href: "https://www.tving.com/contents/M000379698?utm_source=Naver&utm_medium=Organic&utm_campaign=SERP", icon: tvingIcon },
+      { label: "WATCHA", href: "https://watcha.com/contents/m5nXPgo", icon: watchaIcon },
     ],
   },
 ];
@@ -399,35 +402,23 @@ export default function App() {
                       </button>
                       <div className="px-3.5 md:px-4 pb-3.5 md:pb-4">
                         <div className="flex flex-wrap gap-2">
-                          {work.ott?.map((platform) => {
-                            const iconClass =
-                              platform.label === "Wavve"
-                                ? "bg-[#1351F9] text-white"
-                                : platform.label === "TVING"
-                                  ? "bg-[#FF153C] text-white"
-                                  : "bg-[#111111] text-white border border-white/10";
-
-                            const shortLabel =
-                              platform.label === "Wavve"
-                                ? "wa"
-                                : platform.label === "TVING"
-                                  ? "T"
-                                  : "W";
-
-                            return (
-                              <a
-                                key={platform.label}
-                                href={platform.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={platform.label}
-                                title={platform.label}
-                                className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-[11px] font-bold uppercase tracking-tight transition-transform hover:scale-105 ${iconClass}`}
-                              >
-                                {shortLabel}
-                              </a>
-                            );
-                          })}
+                          {work.ott?.map((platform) => (
+                            <a
+                              key={platform.label}
+                              href={platform.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={platform.label}
+                              title={platform.label}
+                              className="inline-flex h-9 w-9 overflow-hidden rounded-full ring-1 ring-white/10 transition-transform hover:scale-105"
+                            >
+                              <img
+                                src={platform.icon}
+                                alt={platform.label}
+                                className="h-full w-full object-cover"
+                              />
+                            </a>
+                          ))}
                         </div>
                       </div>
                     </motion.div>
