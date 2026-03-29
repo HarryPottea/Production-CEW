@@ -497,16 +497,43 @@ export default function App() {
               </div>
               <div className="glass-card p-12 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-[100px] -mr-32 -mt-32" />
-                <div className="text-[10px] uppercase tracking-[0.35em] text-white/20 mb-4">CEW</div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight glow-text">
-                  Cogito Exist We live
-                </h3>
-                <p className="text-white/75 text-lg leading-relaxed mb-6 break-keep">
-                  사유하고, 존재하고, 살아가는 인간의 고요한 긴장을 기록합니다.
-                </p>
-                <p className="text-brand-secondary leading-relaxed max-w-xl">
-                  Production CEW는 이미지와 침묵, 그리고 선택의 순간을 통해 인간 존재의 본질을 바라보는 영화를 만듭니다.
-                </p>
+                <h3 className="text-2xl font-bold mb-12">Production CEW builds cinema that lingers after the screen goes dark.</h3>
+                <div className="grid grid-cols-2 gap-8 mb-12">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-widest text-white/20 mb-2">Founded</div>
+                    <div className="text-lg">2022</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-widest text-white/20 mb-2">Team</div>
+                    <div className="text-lg">3 Filmmakers</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-widest text-white/20 mb-2">Focus</div>
+                    <div className="text-lg">Human Existence</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-widest text-white/20 mb-2">Portfolio</div>
+                    <div className="text-lg">Films / Archive</div>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <button
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white/35 cursor-not-allowed opacity-70"
+                    disabled
+                    aria-disabled="true"
+                    title="준비 중"
+                  >
+                    <Play className="w-4 h-4" /> Showreel (준비 중)
+                  </button>
+                  <button
+                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white/35 cursor-not-allowed opacity-70"
+                    disabled
+                    aria-disabled="true"
+                    title="준비 중"
+                  >
+                    Download Portfolio (준비 중)
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>
