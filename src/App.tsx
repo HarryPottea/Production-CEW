@@ -79,6 +79,17 @@ export default function App() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeWork, setActiveWork] = useState(0);
+  const [copied, setCopied] = useState(false);
+
+  const copyContactEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("j-yeonchan@production-cew.com");
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2200);
+    } catch {
+      window.prompt("메일 주소를 복사해 주세요", "j-yeonchan@production-cew.com");
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -120,9 +131,7 @@ export default function App() {
           <div className="hidden md:block">
             <button
               type="button"
-              onClick={() => {
-                window.location.href = "mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry";
-              }}
+              onClick={copyContactEmail}
               className="text-sm font-semibold hover:text-white/80 transition-colors"
             >
               Contact Us
@@ -159,9 +168,7 @@ export default function App() {
             ))}
             <button
               type="button"
-              onClick={() => {
-                window.location.href = "mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry";
-              }}
+              onClick={copyContactEmail}
               className="btn-primary mt-4"
             >
               Contact Us
@@ -169,6 +176,12 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {copied && (
+        <div className="fixed top-6 left-1/2 z-[60] -translate-x-1/2 rounded-full border border-white/10 bg-black/85 px-5 py-3 text-sm text-white shadow-2xl backdrop-blur-md">
+          메일 주소가 클립보드에 복사되었습니다.
+        </div>
+      )}
 
       <main>
         {/* Hero Section */}
@@ -244,9 +257,7 @@ export default function App() {
                   <a href="#works" className="btn-primary inline-flex items-center justify-center">View Works</a>
                   <button
                     type="button"
-                    onClick={() => {
-                      window.location.href = "mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry";
-                    }}
+                    onClick={copyContactEmail}
                     className="btn-secondary inline-flex items-center justify-center"
                   >
                     Contact Us
@@ -468,13 +479,13 @@ export default function App() {
                   For collaboration, screenings, or festival inquiries.
                 </h2>
                 <div className="space-y-6">
-                  <a href="mailto:j-yeonchan@production-cew.com" className="flex items-center justify-between p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group">
+                  <button type="button" onClick={copyContactEmail} className="w-full flex items-center justify-between p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group text-left">
                     <div className="flex items-center gap-4">
                       <Mail className="w-5 h-5 text-white/40" />
                       <span>j-yeonchan@production-cew.com</span>
                     </div>
                     <ArrowRight className="w-5 h-5 text-white/20 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </button>
                   <a href="https://instagram.com/prod.cew" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group">
                     <div className="flex items-center gap-4">
                       <Instagram className="w-5 h-5 text-white/40" />
