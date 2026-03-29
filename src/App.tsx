@@ -16,6 +16,7 @@ import {
   Play,
 } from "lucide-react";
 import cewLogo from "@/assets/cew-logo.png";
+import heroBg from "@/assets/hero-bg.jpg";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -162,10 +163,9 @@ export default function App() {
           <div className="absolute inset-0 z-0 overflow-hidden">
             {/* Cinematic Image */}
             <img 
-              src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2070&auto=format&fit=crop" 
-              alt="Hero Background" 
-              className="w-full h-full object-cover opacity-30 grayscale brightness-50 scale-110 blur-[2px]"
-              referrerPolicy="no-referrer"
+              src={heroBg}
+              alt="Production CEW hero background" 
+              className="w-full h-full object-cover opacity-35 brightness-50 scale-110 blur-[1px]"
             />
             
             {/* Atmospheric Blobs */}
