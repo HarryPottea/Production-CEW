@@ -199,9 +199,9 @@ export default function App() {
               우리는 인간 존재의 고요한 긴장과 선택의 순간을 기록합니다. <br />
               Production CEW is a Seoul-based film production founded by three young filmmakers.
             </p>
-            <button className="btn-primary">
+            <a href="#works" className="btn-primary inline-flex items-center justify-center">
               View Our Works
-            </button>
+            </a>
           </motion.div>
 
           <motion.div 
@@ -235,7 +235,7 @@ export default function App() {
                   들여다보는 영화를 만듭니다.
                 </p>
                 <div className="flex gap-4">
-                  <button className="btn-primary">View Works</button>
+                  <a href="#works" className="btn-primary inline-flex items-center justify-center">View Works</a>
                   <a href="mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry" className="btn-secondary inline-flex items-center justify-center">Contact Us</a>
                 </div>
               </div>
@@ -532,14 +532,14 @@ export default function App() {
               </div>
               <div className="flex flex-col gap-4">
                 <span className="text-[10px] uppercase tracking-widest text-white/20">Company</span>
-                <a href="#" className="text-sm text-white/40 hover:text-white transition-colors">About</a>
-                <a href="#" className="text-sm text-white/40 hover:text-white transition-colors">Contact</a>
-                <a href="#" className="text-sm text-white/40 hover:text-white transition-colors">Careers</a>
+                <a href="#about" className="text-sm text-white/40 hover:text-white transition-colors">About</a>
+                <a href="#contact" className="text-sm text-white/40 hover:text-white transition-colors">Contact</a>
+                <a href="mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry" className="text-sm text-white/40 hover:text-white transition-colors">Careers</a>
               </div>
               <div className="flex flex-col gap-4">
                 <span className="text-[10px] uppercase tracking-widest text-white/20">Social</span>
-                <a href="#" className="text-sm text-white/40 hover:text-white transition-colors">Instagram</a>
-                <a href="#" className="text-sm text-white/40 hover:text-white transition-colors">Vimeo</a>
+                <a href="https://instagram.com/prod.cew" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-white transition-colors">Instagram</a>
+                <a href="#works" className="text-sm text-white/40 hover:text-white transition-colors">Vimeo</a>
               </div>
             </div>
           </div>
@@ -549,8 +549,8 @@ export default function App() {
               © 2026 Production CEW. All rights reserved.
             </p>
             <div className="flex gap-8">
-              <a href="#" className="text-[10px] uppercase tracking-widest text-white/20 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-[10px] uppercase tracking-widest text-white/20 hover:text-white transition-colors">Terms of Service</a>
+              <span className="text-[10px] uppercase tracking-widest text-white/10 cursor-not-allowed">Privacy Policy</span>
+              <span className="text-[10px] uppercase tracking-widest text-white/10 cursor-not-allowed">Terms of Service</span>
             </div>
           </div>
         </div>
