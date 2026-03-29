@@ -192,11 +192,11 @@ export default function App() {
             className="relative z-10 text-center max-w-4xl"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-8 glow-text break-keep">
-              우리는 인간 존재의 고요한 긴장과 <br />
-              선택의 순간을 기록합니다.
+              We capture the quiet tension of human existence <br />
+              and the moments of choice.
             </h1>
             <p className="mx-auto max-w-xl text-lg text-brand-secondary md:text-xl font-light leading-relaxed mb-12">
-              인간이라는 존재의 본질을 들여다보는 이야기를 만듭니다. <br />
+              우리는 인간 존재의 고요한 긴장과 선택의 순간을 기록합니다. <br />
               Production CEW is a film production founded by three young filmmakers.
             </p>
             <button className="btn-primary">
