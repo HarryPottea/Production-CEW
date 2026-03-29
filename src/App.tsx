@@ -15,6 +15,7 @@ import {
   GalleryVertical,
   Play,
 } from "lucide-react";
+import cewLogo from "@/assets/cew-logo.png";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -95,9 +96,12 @@ export default function App() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12">
-          <a href="#top" className="flex items-center gap-2 text-xl font-display font-semibold tracking-tight">
-            <Sparkles className="w-5 h-5 text-white" />
-            <span>Production CEW</span>
+          <a href="#top" className="flex items-center">
+            <img
+              src={cewLogo}
+              alt="Production CEW logo"
+              className="h-12 w-auto md:h-14 object-contain"
+            />
           </a>
 
           <nav className="hidden items-center gap-10 md:flex">
