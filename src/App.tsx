@@ -118,9 +118,12 @@ export default function App() {
           </nav>
 
           <div className="hidden md:block">
-            <button className="text-sm font-semibold hover:text-white/80 transition-colors">
+            <a
+              href="mailto:contact@production-cew.com?subject=Production%20CEW%20Inquiry"
+              className="text-sm font-semibold hover:text-white/80 transition-colors"
+            >
               Contact Us
-            </button>
+            </a>
           </div>
 
           <button
@@ -151,7 +154,12 @@ export default function App() {
                 {item.label}
               </a>
             ))}
-            <button className="btn-primary mt-4">Contact Us</button>
+            <a
+              href="mailto:contact@production-cew.com?subject=Production%20CEW%20Inquiry"
+              className="btn-primary mt-4"
+            >
+              Contact Us
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -183,9 +191,9 @@ export default function App() {
             animate="show"
             className="relative z-10 text-center max-w-4xl"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-8 glow-text">
-              Stories that look into the <br />
-              essence of being human.
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-8 glow-text break-keep">
+              우리는 인간 존재의 고요한 긴장과 <br />
+              선택의 순간을 기록합니다.
             </h1>
             <p className="mx-auto max-w-xl text-lg text-brand-secondary md:text-xl font-light leading-relaxed mb-12">
               인간이라는 존재의 본질을 들여다보는 이야기를 만듭니다. <br />
@@ -228,7 +236,7 @@ export default function App() {
                 </p>
                 <div className="flex gap-4">
                   <button className="btn-primary">View Works</button>
-                  <button className="btn-secondary">Contact Us</button>
+                  <a href="mailto:contact@production-cew.com?subject=Production%20CEW%20Inquiry" className="btn-secondary inline-flex items-center justify-center">Contact Us</a>
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -484,10 +492,22 @@ export default function App() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <button className="btn-primary flex items-center gap-2">
-                    <Play className="w-4 h-4" /> Showreel
+                  <button
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white/35 cursor-not-allowed opacity-70"
+                    disabled
+                    aria-disabled="true"
+                    title="준비 중"
+                  >
+                    <Play className="w-4 h-4" /> Showreel (준비 중)
                   </button>
-                  <button className="btn-secondary">Download Portfolio</button>
+                  <button
+                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white/35 cursor-not-allowed opacity-70"
+                    disabled
+                    aria-disabled="true"
+                    title="준비 중"
+                  >
+                    Download Portfolio (준비 중)
+                  </button>
                 </div>
               </div>
             </motion.div>
