@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import cewLogo from "@/assets/cew-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
+import whyAreYouHerePoster from "@/assets/why-are-you-here-poster.jpg";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,7 +29,20 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-const works = [];
+const works = [
+  {
+    title: "왜 여기 있어요",
+    titleKo: "Why Are You Here",
+    year: "2024",
+    status: "Completed",
+    format: "Short Film · 20min",
+    image: whyAreYouHerePoster,
+    description:
+      "고요한 불안과 관계의 균열 속에서 인간의 선택과 존재를 응시하는 20분의 단편 영화.",
+    production: "프로덕션 큐",
+    distribution: "주식회사 퍼니콘",
+  },
+];
 
 const archiveItems = [
   {
@@ -362,9 +376,13 @@ export default function App() {
                       </div>
                       <h3 className="text-4xl md:text-6xl font-bold mb-4">{currentWork?.title}</h3>
                       <p className="text-xl text-white/60 mb-8">{currentWork?.titleKo}</p>
-                      <p className="max-w-2xl text-brand-secondary leading-relaxed">
+                      <p className="max-w-2xl text-brand-secondary leading-relaxed mb-6">
                         {currentWork?.description}
                       </p>
+                      <div className="flex flex-col gap-2 text-sm text-white/70">
+                        <div><span className="text-white/40">제작</span> {currentWork?.production}</div>
+                        <div><span className="text-white/40">배급</span> {currentWork?.distribution}</div>
+                      </div>
                     </div>
                   </motion.div>
 
