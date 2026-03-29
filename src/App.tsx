@@ -112,7 +112,7 @@ export default function App() {
             <img
               src={cewLogo}
               alt="Production CEW logo"
-              className="h-24 w-auto md:h-28 object-contain"
+              className="h-16 w-auto md:h-20 object-contain"
             />
           </a>
 
