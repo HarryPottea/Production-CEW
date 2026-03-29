@@ -111,8 +111,6 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const currentWork = works.length > 0 ? works[activeWork] : null;
-
   return (
     <div className="min-h-screen bg-bg-dark text-brand-primary font-sans">
       {/* Navigation */}
@@ -357,52 +355,44 @@ export default function App() {
 
             <div className="w-full">
               {works.length > 0 ? (
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="relative aspect-[16/10] rounded-[48px] overflow-hidden"
-                  >
-                    <img 
-                      src={currentWork?.image} 
-                      alt={currentWork?.title} 
-                      className="w-full h-full object-cover opacity-80"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-12 flex flex-col justify-end">
-                      <div className="flex gap-3 mb-6">
-                        <Badge className="bg-white/10 text-white border-white/20">{currentWork?.status}</Badge>
-                        <Badge className="bg-white/10 text-white border-white/20">{currentWork?.format}</Badge>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {works.map((work, idx) => (
+                    <motion.button
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      onClick={() => setActiveWork(idx)}
+                      className={`group text-left overflow-hidden rounded-[28px] border transition-all duration-500 ${
+                        activeWork === idx
+                          ? "bg-white/10 border-white/20"
+                          : "bg-white/[0.02] border-white/5 hover:bg-white/5"
+                      }`}
+                    >
+                      <div className="aspect-[7/10] overflow-hidden bg-black/30">
+                        <img
+                          src={work.image}
+                          alt={work.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        />
                       </div>
-                      <h3 className="text-4xl md:text-6xl font-bold mb-4">{currentWork?.title}</h3>
-                      <p className="text-xl text-white/60 mb-8">{currentWork?.titleKo}</p>
-                      <p className="max-w-2xl text-brand-secondary leading-relaxed mb-6">
-                        {currentWork?.description}
-                      </p>
-                      <div className="flex flex-col gap-2 text-sm text-white/70">
-                        <div><span className="text-white/40">제작</span> {currentWork?.production}</div>
-                        <div><span className="text-white/40">배급</span> {currentWork?.distribution}</div>
+                      <div className="p-6">
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <Badge className="bg-white/10 text-white border-white/20">{work.year}</Badge>
+                          <Badge className="bg-white/10 text-white border-white/20">{work.format}</Badge>
+                        </div>
+                        <h3 className="text-2xl font-bold mb-2">{work.title}</h3>
+                        <p className="text-sm text-white/50 mb-4">{work.titleKo}</p>
+                        <p className="text-sm text-brand-secondary leading-relaxed mb-5 line-clamp-3">
+                          {work.description}
+                        </p>
+                        <div className="flex flex-col gap-2 text-sm text-white/70">
+                          <div><span className="text-white/40">제작</span> {work.production}</div>
+                          <div><span className="text-white/40">배급</span> {work.distribution}</div>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-
-                  <div className="flex flex-col gap-4">
-                    {works.map((work, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setActiveWork(idx)}
-                        className={`text-left p-8 rounded-[32px] border transition-all duration-500 ${
-                          activeWork === idx 
-                            ? "bg-white/10 border-white/20" 
-                            : "bg-white/[0.02] border-white/5 hover:bg-white/5"
-                        }`}
-                      >
-                        <div className="text-xs text-white/40 mb-2 font-mono">{work.year}</div>
-                        <h4 className="text-xl font-bold mb-2">{work.title}</h4>
-                        <p className="text-sm text-brand-secondary truncate">{work.description}</p>
-                      </button>
-                    ))}
-                  </div>
+                    </motion.button>
+                  ))}
                 </div>
               ) : (
                 <div className="glass-card p-20 text-center">
