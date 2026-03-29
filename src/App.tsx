@@ -136,15 +136,15 @@ export default function App() {
       {/* Navigation */}
       <header 
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-black/80 backdrop-blur-xl py-4 border-b border-white/5" : "bg-transparent py-8"
+          scrolled ? "bg-black/80 backdrop-blur-xl py-3 md:py-4 border-b border-white/5" : "bg-transparent py-4 md:py-8"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-12">
           <a href="#top" className="flex items-center">
             <img
               src={cewLogo}
               alt="Production CEW logo"
-              className="h-16 w-auto md:h-20 object-contain"
+              className="h-11 w-auto md:h-20 object-contain"
             />
           </a>
 
@@ -210,14 +210,14 @@ export default function App() {
       </AnimatePresence>
 
       {copied && (
-        <div className="fixed top-6 left-1/2 z-[60] -translate-x-1/2 rounded-full border border-white/10 bg-black/85 px-5 py-3 text-sm text-white shadow-2xl backdrop-blur-md">
+        <div className="fixed top-4 left-1/2 z-[60] w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 rounded-2xl border border-white/10 bg-black/85 px-4 py-3 text-center text-sm text-white shadow-2xl backdrop-blur-md sm:w-auto sm:max-w-none sm:rounded-full sm:px-5">
           메일 주소가 클립보드에 복사되었습니다.
         </div>
       )}
 
       <main>
         {/* Hero Section */}
-        <section id="top" className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+        <section id="top" className="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden pt-24 md:pt-0">
           {/* Background Elements */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             {/* Cinematic Image */}
@@ -240,13 +240,13 @@ export default function App() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="relative z-10 text-center max-w-4xl"
+            className="relative z-10 text-center max-w-4xl px-2"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-8 glow-text break-keep">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.15] tracking-tight mb-6 md:mb-8 glow-text break-keep">
               We capture the quiet tension of human existence <br />
               and the moments of choice.
             </h1>
-            <p className="mx-auto max-w-xl text-lg text-brand-secondary md:text-xl font-light leading-relaxed mb-12">
+            <p className="mx-auto max-w-xl text-base text-brand-secondary md:text-xl font-light leading-relaxed mb-10 md:mb-12">
               우리는 인간 존재의 고요한 긴장과 선택의 순간을 기록합니다. <br />
               Production CEW is a Seoul-based film production founded by three young filmmakers.
             </p>
@@ -267,7 +267,7 @@ export default function App() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-32 px-6">
+        <section id="about" className="py-20 md:py-32 px-4 md:px-6">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -321,7 +321,7 @@ export default function App() {
         </section>
 
         {/* Team Section */}
-        <section id="team" className="py-32 px-6 bg-white/[0.01]">
+        <section id="team" className="py-20 md:py-32 px-4 md:px-6 bg-white/[0.01]">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -359,7 +359,7 @@ export default function App() {
         </section>
 
         {/* Works Section */}
-        <section id="works" className="py-32 px-6">
+        <section id="works" className="py-20 md:py-32 px-4 md:px-6">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -375,14 +375,14 @@ export default function App() {
 
             <div className="w-full">
               {works.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-5 max-w-4xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-5 max-w-4xl mx-auto md:mx-0 justify-items-center md:justify-items-start">
                   {works.map((work, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      className={`group text-left overflow-hidden rounded-[24px] border transition-all duration-500 max-w-[280px] ${
+                      className={`group w-full text-left overflow-hidden rounded-[20px] border transition-all duration-500 max-w-[260px] ${
                         activeWork === idx
                           ? "bg-white/10 border-white/20"
                           : "bg-white/[0.02] border-white/5 hover:bg-white/5"
@@ -448,7 +448,7 @@ export default function App() {
         </section>
 
         {/* Archive Section */}
-        <section id="archive" className="py-32 px-6 bg-white/[0.01]">
+        <section id="archive" className="py-20 md:py-32 px-4 md:px-6 bg-white/[0.01]">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -490,7 +490,7 @@ export default function App() {
         </section>
 
         {/* Perspective Section */}
-        <section className="py-32 px-6">
+        <section className="py-20 md:py-32 px-4 md:px-6">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -517,7 +517,7 @@ export default function App() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-32 px-6">
+        <section id="contact" className="py-20 md:py-32 px-4 md:px-6">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -531,14 +531,14 @@ export default function App() {
                   For collaboration, screenings, or festival inquiries.
                 </h2>
                 <div className="space-y-6">
-                  <button type="button" onClick={copyContactEmail} className="w-full flex items-center justify-between p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group text-left">
+                  <button type="button" onClick={copyContactEmail} className="w-full flex items-center justify-between p-4 md:p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group text-left">
                     <div className="flex items-center gap-4">
                       <Mail className="w-5 h-5 text-white/40" />
                       <span>j-yeonchan@production-cew.com</span>
                     </div>
                     <ArrowRight className="w-5 h-5 text-white/20 group-hover:translate-x-1 transition-transform" />
                   </button>
-                  <a href="https://instagram.com/prod.cew" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group">
+                  <a href="https://instagram.com/prod.cew" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 md:p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group">
                     <div className="flex items-center gap-4">
                       <Instagram className="w-5 h-5 text-white/40" />
                       <span>@prod.cew</span>
