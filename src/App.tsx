@@ -515,41 +515,17 @@ export default function App() {
 
       <footer className="py-20 px-6 border-t border-white/5">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-12 mb-20">
-            <div className="flex items-center gap-2 text-2xl font-display font-semibold tracking-tight">
-              <Sparkles className="w-6 h-6" />
-              <span>Production CEW</span>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-20">
-              <div className="flex flex-col gap-4">
-                <span className="text-[10px] uppercase tracking-widest text-white/20">Studio</span>
-                <a href="#works" className="text-sm text-white/40 hover:text-white transition-colors">Works</a>
-                <a href="#archive" className="text-sm text-white/40 hover:text-white transition-colors">Archive</a>
-                <a href="#contact" className="text-sm text-white/40 hover:text-white transition-colors">Contact</a>
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="text-[10px] uppercase tracking-widest text-white/20">Company</span>
-                <a href="#about" className="text-sm text-white/40 hover:text-white transition-colors">About</a>
-                <a href="#contact" className="text-sm text-white/40 hover:text-white transition-colors">Contact</a>
-                <a href="mailto:j-yeonchan@production-cew.com?subject=Production%20CEW%20Inquiry" className="text-sm text-white/40 hover:text-white transition-colors">Careers</a>
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="text-[10px] uppercase tracking-widest text-white/20">Social</span>
-                <a href="https://instagram.com/prod.cew" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-white transition-colors">Instagram</a>
-                <a href="#works" className="text-sm text-white/40 hover:text-white transition-colors">Vimeo</a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-white/5 gap-6">
-            <p className="text-xs tracking-widest uppercase text-white/20">
+          <div className="max-w-3xl space-y-6">
+            <div className="text-[10px] uppercase tracking-[0.35em] text-white/20">CEW</div>
+            <p className="text-2xl md:text-3xl font-display font-semibold leading-tight glow-text">
+              Cogito Exist We live
+            </p>
+            <p className="text-base md:text-lg text-white/70 leading-relaxed break-keep">
+              사유하고, 존재하고, 살아가는 인간의 고요한 긴장을 기록합니다.
+            </p>
+            <p className="text-sm text-white/40 leading-relaxed">
               © 2026 Production CEW. All rights reserved.
             </p>
-            <div className="flex gap-8">
-              <span className="text-[10px] uppercase tracking-widest text-white/10 cursor-not-allowed">Privacy Policy</span>
-              <span className="text-[10px] uppercase tracking-widest text-white/10 cursor-not-allowed">Terms of Service</span>
-            </div>
           </div>
         </div>
       </footer>
