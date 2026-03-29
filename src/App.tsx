@@ -38,7 +38,7 @@ const works = [
     format: "Short Film · 20min",
     image: whyAreYouHerePoster,
     description:
-      "고요한 불안과 관계의 균열 속에서 인간의 선택과 존재를 응시하는 20분의 단편 영화.",
+      "은둔하며 살아가던 청년이 온라인에서 만난 또 다른 ‘히키코모리’와 소통하며 생기는 일들을 다룬 단편영화.",
     production: "프로덕션 큐",
     distribution: "주식회사 퍼니콘",
     ott: [
@@ -360,7 +360,7 @@ export default function App() {
 
             <div className="w-full">
               {works.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-6 max-w-6xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-5 max-w-5xl">
                   {works.map((work, idx) => (
                     <motion.div
                       key={idx}
@@ -374,42 +374,60 @@ export default function App() {
                       }`}
                     >
                       <button type="button" onClick={() => setActiveWork(idx)} className="block w-full text-left">
-                        <div className="aspect-[7/10] overflow-hidden bg-black/30">
+                        <div className="aspect-[7/10] overflow-hidden bg-black/30 max-h-[420px]">
                           <img
                             src={work.image}
                             alt={work.title}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                           />
                         </div>
-                        <div className="p-4 md:p-5">
-                          <div className="flex flex-wrap gap-2 mb-3">
+                        <div className="p-3.5 md:p-4">
+                          <div className="flex flex-wrap gap-2 mb-2.5">
                             <Badge className="bg-white/10 text-white border-white/20">{work.year}</Badge>
                             <Badge className="bg-white/10 text-white border-white/20">{work.format}</Badge>
                           </div>
-                          <h3 className="text-xl font-bold mb-1">{work.title}</h3>
-                          <p className="text-sm text-white/50 mb-3">{work.titleKo}</p>
-                          <p className="text-sm text-brand-secondary leading-relaxed mb-4 line-clamp-3">
+                          <h3 className="text-lg font-bold mb-1">{work.title}</h3>
+                          <p className="text-xs text-white/50 mb-2.5">{work.titleKo}</p>
+                          <p className="text-xs text-brand-secondary leading-relaxed mb-3.5 line-clamp-3">
                             {work.description}
                           </p>
-                          <div className="flex flex-col gap-1.5 text-sm text-white/70">
+                          <div className="flex flex-col gap-1 text-xs text-white/70">
                             <div><span className="text-white/40">제작</span> {work.production}</div>
                             <div><span className="text-white/40">배급</span> {work.distribution}</div>
                           </div>
                         </div>
                       </button>
-                      <div className="px-4 md:px-5 pb-4 md:pb-5">
+                      <div className="px-3.5 md:px-4 pb-3.5 md:pb-4">
                         <div className="flex flex-wrap gap-2">
-                          {work.ott?.map((platform) => (
-                            <a
-                              key={platform.label}
-                              href={platform.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/75 hover:bg-white/10 transition-colors"
-                            >
-                              {platform.label}
-                            </a>
-                          ))}
+                          {work.ott?.map((platform) => {
+                            const iconClass =
+                              platform.label === "Wavve"
+                                ? "bg-[#1351F9] text-white"
+                                : platform.label === "TVING"
+                                  ? "bg-[#FF153C] text-white"
+                                  : "bg-[#111111] text-white border border-white/10";
+
+                            const shortLabel =
+                              platform.label === "Wavve"
+                                ? "wa"
+                                : platform.label === "TVING"
+                                  ? "T"
+                                  : "W";
+
+                            return (
+                              <a
+                                key={platform.label}
+                                href={platform.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={platform.label}
+                                title={platform.label}
+                                className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-[11px] font-bold uppercase tracking-tight transition-transform hover:scale-105 ${iconClass}`}
+                              >
+                                {shortLabel}
+                              </a>
+                            );
+                          })}
                         </div>
                       </div>
                     </motion.div>
