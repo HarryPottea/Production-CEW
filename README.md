@@ -1,20 +1,10 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Production CEW
 
-# Run and deploy your AI Studio app
+프로덕션 큐 공식 사이트의 정적 Vite 빌드입니다.
 
-This contains everything you need to run your app locally.
+- 배포 화면: `index.html`
+- 이미지: `public/assets/`
+- 로컬 확인: `npm ci && npm run dev`
+- 프로덕션 빌드: `npm run build`
 
-View your app in AI Studio: https://ai.studio/apps/9705d02b-529c-4022-9bef-e4849a5f3945
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+기존 `src/`의 React 구현은 이전 버전의 소스이며 현재 진입점에서 사용하지 않습니다. 새 화면은 2026-11-09에 승인된 시안을 바탕으로, ‘존유’와 `Cogito · Exist · Welive`를 첫 화면에 반영했습니다.
